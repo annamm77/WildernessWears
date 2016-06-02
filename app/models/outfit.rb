@@ -7,35 +7,43 @@ class Outfit < ActiveRecord::Base
     @extras = find_extras(temp,id)
   end
 
-  private
+private
 
-    def find_top(temp)
-      # 60+   = tank top
-      # 50-59 = t-shirt
-      # 40-49 = long sleeve & light jacket
-      # 30-39 = long sleeve & heavy jacket
-      # 29-   = long sleeve & snow jacket
+  def find_top(temp)
+    if temp >= 60
+      return ["Tank Top"]
+    elsif temp >= 50 && temp < 60
+      return ["T-Shirt"]
+    elsif temp >= 40 && temp < 50
+      return ["Long Sleeve Shirt","Light Jacket"]
+    elsif temp >= 30 && temp < 40
+      return ["Long Sleeve Shirt","Heavy Jacket"]
+    elsif temp <= 29
+      return ["Long Sleeve Shirt","Snow Jacket"]
+    else
+      return []
     end
+  end
 
-    def find_bottom(temp)
-      # 60+   = shorts
-      # 50-59 = shorts
-      # 40-49 = leggings
-      # 30-39 = leggings
-      # 29-   = snow pants
-    end
+  def find_bottom(temp)
+    # 60+   = shorts
+    # 50-59 = shorts
+    # 40-49 = leggings
+    # 30-39 = leggings
+    # 29-   = snow pants
+  end
 
-    def find_extras(temp,id)
-      # by id
-      # 200 = thunderstorm
-      # 300 = drizzle
-      # 500 = rain
-      # 600 = snow
-      # 800 = clear
+  def find_extras(temp,id)
+    # by id
+    # 200 = thunderstorm
+    # 300 = drizzle
+    # 500 = rain
+    # 600 = snow
+    # 800 = clear
 
-      # by temp
-      # 30-39 = gloves & earwarmers
-      # 29-   = gloves & hat
-    end
+    # by temp
+    # 30-39 = gloves & earwarmers
+    # 29-   = gloves & hat
+  end
 
 end
