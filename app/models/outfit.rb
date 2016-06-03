@@ -1,11 +1,11 @@
-class Outfit < ActiveRecord::Base
-  attr_reader :top, :bottom, :extras
+class Outfit
+attr_accessor :top, :bottom, :extras
 
-  def initialize(hash)
-    @top = find_top(hash[:temp])
-    @bottom = find_bottom(hash[:temp])
-    @extras = find_extras(hash[:id])
-  end
+def initialize(hash = {})
+  @top = find_top(hash[:temp])
+  @bottom = find_bottom(hash[:temp])
+  @extras = find_extras(hash[:id])
+end
 
 private
 
