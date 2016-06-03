@@ -1,10 +1,10 @@
-class Outfit < ActiveRecord::Base
+class Outfit
   attr_reader :top, :bottom, :extras
 
-  def initialize(temp,id)
-    @top = find_top(temp)
-    @bottom = find_bottom(temp)
-    @extras = find_extras(temp,id)
+  def initialize(hash)
+    @top = find_top(hash[:temp])
+    @bottom = find_bottom(hash[:temp])
+    @extras = find_extras(hash[:id])
   end
 
 private
@@ -33,7 +33,7 @@ private
     elsif temp >= 40 && temp < 50
       return ["Pants"]
     elsif temp >= 30 && temp < 40
-      return ["Pants"]
+      return ["Pants", "Tights"]
     elsif temp <= 29
       return ["Snow Pants"]
     else
@@ -41,23 +41,21 @@ private
     end
   end
 
-  def find_extras(temp,id)
+  def find_extras(id)
     extras = []
 
     if (300...400).include? id
       # drizzle
+      extras << "Raincoat"
     elsif (500...600).include? id
       # rain
+      extras << "Raincoat"
     elsif (600...700).include? id
       # snow
-    elsif (800...900).include? id
-      # clear
+      extras << "Warm Hat" << "Gloves"
     else
       []
     end
-    # by temp
-    # 30-39 = gloves & earwarmers
-    # 29-   = gloves & hat
 
     return extras
   end
