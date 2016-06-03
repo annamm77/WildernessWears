@@ -1,7 +1,7 @@
 class Outfit
 attr_accessor :top, :bottom, :extras
 
-def initialize(hash = {})
+def initialize(hash)
   @top = find_top(hash[:temp])
   @bottom = find_bottom(hash[:temp])
   @extras = find_extras(hash[:id])
