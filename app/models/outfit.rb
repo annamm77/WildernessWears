@@ -1,4 +1,4 @@
-class Outfit
+class Outfit < ActiveRecord::Base
   attr_reader :top, :bottom, :extras
 
   def initialize(hash)
@@ -59,5 +59,4 @@ private
 
     return extras
   end
-
 end
