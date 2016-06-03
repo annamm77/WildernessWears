@@ -1,8 +1,11 @@
+require 'OpenWeatherMapWrapper'
+require 'outfit'
+
 class WeatherController < ApplicationController
 
   def createoutfit
+    @wrapper = OpenWeatherMapWrapper.find(params["zipcode"])
     raise
-    params["zipcode"]
     #take zip code from params
     #create a wrapper from that zip code
     #create an outfit model from the wrapper
