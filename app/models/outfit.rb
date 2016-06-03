@@ -26,24 +26,40 @@ private
   end
 
   def find_bottom(temp)
-    # 60+   = shorts
-    # 50-59 = shorts
-    # 40-49 = leggings
-    # 30-39 = leggings
-    # 29-   = snow pants
+    if temp >= 60
+      return ["Shorts"]
+    elsif temp >= 50 && temp < 60
+      return ["Shorts"]
+    elsif temp >= 40 && temp < 50
+      return ["Pants"]
+    elsif temp >= 30 && temp < 40
+      return ["Pants"]
+    elsif temp <= 29
+      return ["Snow Pants"]
+    else
+      return []
+    end
   end
 
   def find_extras(temp,id)
-    # by id
-    # 200 = thunderstorm
-    # 300 = drizzle
-    # 500 = rain
-    # 600 = snow
-    # 800 = clear
+    extras = []
 
+    if (300...400).include? id
+      # drizzle
+    elsif (500...600).include? id
+      # rain
+    elsif (600...700).include? id
+      # snow
+    elsif (800...900).include? id
+      # clear
+    else
+      []
+    end
     # by temp
     # 30-39 = gloves & earwarmers
     # 29-   = gloves & hat
+
+    return extras
   end
 
 end

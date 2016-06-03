@@ -2,4 +2,7 @@
 
 <p>Please enter your zip code.</p>
 
-<p>Form goes here....</p>
+<%= form_tag 'outfit', :method => "post" do %>
+  <%= text_field_tag :zipcode %>
+  <%= submit_tag 'Submit' %>
+<% end %>
