@@ -1,10 +1,12 @@
-<div class="jumbotron">
-<h1>Wilderness Wears</h1>
+<div class="jumbotron jumbotron-top">
 
-<p>Enter zip code, receieve outfit suggestion.</p>
+  <h1>Wilderness Wears</h1>
 
-<%= form_tag 'outfit', :method => "post" do %>
-  <%= text_field_tag :zipcode %>
-  <%= submit_tag 'Submit' %>
-<% end %>
+  <%= form_tag 'outfit', :method => "post" do %>
+    <%= text_field_tag :zipcode %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+
+  <p>Enter your destination's zip code for an outfit suggestion.</p>
+
 </div>

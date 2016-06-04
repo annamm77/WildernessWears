@@ -1,15 +1,39 @@
-<h2>Your Outfit Suggestion</h2>
+<div class="jumbotron jumbotron-top">
+  <h2>Weather Today</h2>
+  <p>goes here!!!</p>
+</div>
 
-<p>
-  Top: <%= @outfit.top.join(" & ") %>
-</p>
 
-<p>
-  Bottom: <%= @outfit.bottom.join(" & ") %>
-</p>
+<div class="jumbotron jumbotron-middle">
 
-<% if @outfit.extras.any? %>
-  <p>
-    Extras: <%= @outfit.extras.join(" & ") %>
-  </p>
-<% end %>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placekitten.com/250/300">
+        <div class="caption">
+          <h3><%= @outfit.top.join(" & ") %></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placekitten.com/250/300">
+        <div class="caption">
+          <h3><%= @outfit.bottom.join(" & ") %></h3>
+        </div>
+      </div>
+    </div>
+
+  <% if @outfit.extras.any? %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placekitten.com/250/300">
+        <div class="caption">
+          <h3><%= @outfit.extras.join(" & ") %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
