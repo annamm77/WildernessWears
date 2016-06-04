@@ -11,10 +11,12 @@ class OpenWeatherMapWrapper
     @desc = data["weather"][0]["description"]
     @temp = data["main"]["temp"]
     @image = "http://openweathermap.org/img/w/#{data["weather"][0]["icon"]}.png"
+    @city = data["name"]
   end
 
   def self.find(zipcode)
     data = HTTParty.get(BASE_URL + "weather?zip=#{zipcode},us&units=imperial&APPID=#{ENV["OPEN_WEATHER_MAP_KEY"]}").parsed_response
+    binding.pry
     self.new(data)
   end
 
