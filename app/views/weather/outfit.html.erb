@@ -1,6 +1,9 @@
 <div class="jumbotron jumbotron-top">
-  <h2>Weather Today</h2>
-  <p>goes here!!!</p>
+  <h2>Weather for <%= @wrapper.city %></h2>
+  <p><%= @wrapper.main %></p>
+  <p><%= @wrapper.desc %></p>
+  <p><%= @wrapper.temp %></p>
+  <%= image_tag @wrapper.image %>
 </div>
 
 

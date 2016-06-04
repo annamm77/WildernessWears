@@ -1,7 +1,7 @@
 require 'httparty'
 
 class OpenWeatherMapWrapper
-  attr_reader :id, :main, :desc, :temp, :image
+  attr_reader :id, :main, :desc, :temp, :image, :city
 
   BASE_URL = "http://api.openweathermap.org/data/2.5/"
 
@@ -16,7 +16,6 @@ class OpenWeatherMapWrapper
 
   def self.find(zipcode)
     data = HTTParty.get(BASE_URL + "weather?zip=#{zipcode},us&units=imperial&APPID=#{ENV["OPEN_WEATHER_MAP_KEY"]}").parsed_response
-    binding.pry
     self.new(data)
   end
 
