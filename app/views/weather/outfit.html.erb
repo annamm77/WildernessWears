@@ -1,0 +1,15 @@
+<h2>Your Outfit Suggestion</h2>
+
+<p>
+  Top: <%= @outfit.top.join(" & ") %>
+</p>
+
+<p>
+  Bottom: <%= @outfit.bottom.join(" & ") %>
+</p>
+
+<% if @outfit.extras.any? %>
+  <p>
+    Extras: <%= @outfit.extras.join(" & ") %>
+  </p>
+<% end %>
