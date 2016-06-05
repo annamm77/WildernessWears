@@ -6,7 +6,6 @@
   <%= image_tag @wrapper.image %>
 </div>
 
-
 <div class="jumbotron jumbotron-middle">
 
   <div class="row">
@@ -24,20 +23,26 @@
 
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="http://placekitten.com/250/300">
+        <%= image_tag @bottom_suggestion.image %>
         <div class="caption">
           <h3><%= @outfit.bottom.join(" & ") %></h3>
         </div>
+        <p class="subcaption">
+          <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %>
+        </p>
       </div>
     </div>
 
   <% if @outfit.extras.any? %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="http://placekitten.com/250/300">
+        <%= image_tag @extras_suggestion.image %>
         <div class="caption">
           <h3><%= @outfit.extras.join(" & ") %></h3>
         </div>
+        <p class="subcaption">
+          <%= link_to @extras_suggestion.name, @extras_suggestion.url %>
+        </p>
       </div>
     </div>
   <% end %>
