@@ -9,7 +9,6 @@
 <div class="jumbotron jumbotron-middle">
 
   <div class="row">
-    <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <%= image_tag @top_suggestion.image %>
         <div class="caption">
@@ -19,9 +18,7 @@
           <%= link_to @top_suggestion.name, @top_suggestion.url %>
         </p>
       </div>
-    </div>
 
-    <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <%= image_tag @bottom_suggestion.image %>
         <div class="caption">
@@ -31,10 +28,8 @@
           <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %>
         </p>
       </div>
-    </div>
 
   <% if @outfit.extras.any? %>
-    <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <%= image_tag @extras_suggestion.image %>
         <div class="caption">
@@ -44,7 +39,6 @@
           <%= link_to @extras_suggestion.name, @extras_suggestion.url %>
         </p>
       </div>
-    </div>
   <% end %>
 
 </div>

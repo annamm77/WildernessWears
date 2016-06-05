@@ -23,3 +23,7 @@ background-size:100%;
   color: black;
   text-align: center;
 }
+
+.thumbnail {
+  width: 40%;
+}
