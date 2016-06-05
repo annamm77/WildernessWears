@@ -12,10 +12,13 @@
   <div class="row">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="http://placekitten.com/250/300">
+        <%= image_tag @top_suggestion.image %>
         <div class="caption">
           <h3><%= @outfit.top.join(" & ") %></h3>
         </div>
+        <p class="subcaption">
+          <%= link_to @top_suggestion.name, @top_suggestion.url %>
+        </p>
       </div>
     </div>
 

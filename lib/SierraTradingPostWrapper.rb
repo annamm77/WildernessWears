@@ -14,7 +14,7 @@ class SierraTradingPostWrapper
   def self.search(term)
     #replaces spaces with "-"s.
     term.gsub! /\s+/, '-'
-    data = HTTParty.get(BASE_URL + "products/search~#{term}/?api_key=#{ENV["SIERRA_TRADING_POST_KEY"]}").parsed_response
+    data = HTTParty.get(BASE_URL + "products/search~#{term}-woman/?api_key=#{ENV["SIERRA_TRADING_POST_KEY"]}").parsed_response
     data = data["Result"].sample
 
     self.new(data)
