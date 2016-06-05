@@ -19,7 +19,7 @@ background-size:100%;
 
 /*middle of page jumbotron*/
 .jumbotron-middle {
-  background:rgba(255,255,255,0.50);
+  background:rgba(255,255,255,0.10);
   color: black;
   text-align: center;
 }
@@ -34,7 +34,7 @@ background-size:100%;
 
 /*this could me a col-md instead*/
 .thumbnail-last {
-  width: 43.75%;
+  width: 100%;
 }
 
 .subcaption {
