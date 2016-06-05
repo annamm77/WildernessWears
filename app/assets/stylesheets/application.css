@@ -25,11 +25,11 @@ background-size:100%;
 }
 
 .thumbnail {
-  padding: 2rem;
+  padding-top: 4rem;
 }
 
-.col-md-4 {
-  width: 45%;
+.col-md-6 {
+  width: 50%;
 }
 
 /*this could me a col-md instead*/

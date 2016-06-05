@@ -6,6 +6,7 @@ class SierraTradingPostWrapper
   BASE_URL = "http://api.sierratradingpost.com/api/1.0/"
 
   def initialize(data)
+    data["Name"].slice! " (For Women)"
     @name = data["Name"]
     @url = data["WebUrl"]
     @image = data["Images"]["PrimaryMedium"]
@@ -16,7 +17,6 @@ class SierraTradingPostWrapper
     term.gsub! /\s+/, '-'
     data = HTTParty.get(BASE_URL + "products/search~#{term}-woman/?api_key=#{ENV["SIERRA_TRADING_POST_KEY"]}").parsed_response
     data = data["Result"].sample
-
     self.new(data)
   end
 
