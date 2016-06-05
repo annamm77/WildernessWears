@@ -29,7 +29,7 @@ private
     if temp >= 60
       return ["Shorts"]
     elsif temp >= 50 && temp < 60
-      return ["Shorts"]
+      return ["Capris"]
     elsif temp >= 40 && temp < 50
       return ["Pants"]
     elsif temp >= 30 && temp < 40
