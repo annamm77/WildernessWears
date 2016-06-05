@@ -1,44 +1,53 @@
 <div class="jumbotron jumbotron-top">
-  <h2>Weather for <%= @wrapper.city %></h2>
-  <p><%= @wrapper.main %></p>
-  <p><%= @wrapper.desc %></p>
-  <p><%= @wrapper.temp %></p>
+  <h2>Enjoy your day in <%= @wrapper.city %>!</h2>
+  <p>You can expect <%= @wrapper.desc %> and <%= @wrapper.temp %>&deg;</p>
   <%= image_tag @wrapper.image %>
 </div>
 
 <div class="jumbotron jumbotron-middle">
+  <div class="container-fluid">
 
-  <div class="row">
-      <div class="thumbnail">
-        <%= image_tag @top_suggestion.image %>
-        <div class="caption">
-          <h3><%= @outfit.top.join(" & ") %></h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <%= image_tag @top_suggestion.image %>
+          <div class="caption">
+            <h3><%= @outfit.top.join(" & ") %></h3>
+          </div>
+          <p class="subcaption">
+            <%= link_to @top_suggestion.name, @top_suggestion.url %>
+          </p>
         </div>
-        <p class="subcaption">
-          <%= link_to @top_suggestion.name, @top_suggestion.url %>
-        </p>
       </div>
 
-      <div class="thumbnail">
-        <%= image_tag @bottom_suggestion.image %>
-        <div class="caption">
-          <h3><%= @outfit.bottom.join(" & ") %></h3>
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <%= image_tag @bottom_suggestion.image %>
+          <div class="caption">
+            <h3><%= @outfit.bottom.join(" & ") %></h3>
+          </div>
+          <p class="subcaption">
+            <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %>
+          </p>
         </div>
-        <p class="subcaption">
-          <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %>
-        </p>
       </div>
+    </div>
 
-  <% if @outfit.extras.any? %>
-      <div class="thumbnail">
-        <%= image_tag @extras_suggestion.image %>
-        <div class="caption">
-          <h3><%= @outfit.extras.join(" & ") %></h3>
+      <% if @outfit.extras.any? %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="thumbnail thumbnail-last">
+              <%= image_tag @extras_suggestion.image %>
+              <div class="caption">
+                <h3><%= @outfit.extras.join(" & ") %></h3>
+              </div>
+              <p class="subcaption">
+                <%= link_to @extras_suggestion.name, @extras_suggestion.url %>
+              </p>
+            </div>
+          </div>
         </div>
-        <p class="subcaption">
-          <%= link_to @extras_suggestion.name, @extras_suggestion.url %>
-        </p>
-      </div>
-  <% end %>
+      <% end %>
 
+  </div>
 </div>

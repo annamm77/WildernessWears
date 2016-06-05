@@ -25,5 +25,19 @@ background-size:100%;
 }
 
 .thumbnail {
-  width: 40%;
+  padding: 2rem;
+}
+
+.col-md-4 {
+  width: 45%;
+}
+
+/*this could me a col-md instead*/
+.thumbnail-last {
+  width: 43.75%;
+}
+
+.subcaption {
+  height: 6rem;
+  overflow: hidden;
 }

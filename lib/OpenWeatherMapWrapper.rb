@@ -1,13 +1,12 @@
 require 'httparty'
 
 class OpenWeatherMapWrapper
-  attr_reader :id, :main, :desc, :temp, :image, :city
+  attr_reader :id, :desc, :temp, :image, :city
 
   BASE_URL = "http://api.openweathermap.org/data/2.5/"
 
   def initialize(data)
     @id = data["weather"][0]["id"]
-    @main = data["weather"][0]["main"]
     @desc = data["weather"][0]["description"]
     @temp = data["main"]["temp"]
     @image = "http://openweathermap.org/img/w/#{data["weather"][0]["icon"]}.png"
