@@ -6,20 +6,22 @@
   padding-top: 1rem;
 }
 
-form {
-  margin-top: 6rem;
-  margin-bottom: 2rem;
-}
-
 /*background image*/
 body {
 background-image: url(forestbg.jpg);
 background-size:100%;
 }
 
-/*middle of page jumbotron*/
+/*index page only*/
+
+form {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+/*outfit page only*/
 .jumbotron-middle {
-  background:rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0);
   color: black;
   text-align: center;
 }
@@ -28,16 +30,24 @@ background-size:100%;
   padding-top: 4rem;
 }
 
+.subcaption {
+  height: 6rem;
+  overflow: hidden;
+}
+
+a {
+  color: #339900;
+}
+
+a:hover {
+    color: #336600;
+}
+
 .col-md-6 {
   width: 50%;
 }
 
-/*this could me a col-md instead*/
+/*for extras*/
 .thumbnail-last {
   width: 100%;
-}
-
-.subcaption {
-  height: 6rem;
-  overflow: hidden;
 }
