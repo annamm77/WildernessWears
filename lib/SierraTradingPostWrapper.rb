@@ -1,7 +1,7 @@
 require 'httparty'
 
 class SierraTradingPostWrapper
-  attr_reader :name, :url, :image
+  attr_reader :name, :url, :image, :price
 
   BASE_URL = "http://api.sierratradingpost.com/api/1.0/"
 
@@ -10,6 +10,7 @@ class SierraTradingPostWrapper
     @name = data["Name"]
     @url = data["WebUrl"]
     @image = data["Images"]["PrimaryMedium"]
+    @price = data["FinalPrice"]
   end
 
   def self.search(term)

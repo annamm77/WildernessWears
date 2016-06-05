@@ -15,7 +15,7 @@
             <h3><%= @outfit.top.join(" & ") %></h3>
           </div>
           <p class="subcaption">
-            <%= link_to @top_suggestion.name, @top_suggestion.url %>
+            <%= link_to @top_suggestion.name, @top_suggestion.url %> - $<%= @top_suggestion.price %>
           </p>
         </div>
       </div>
@@ -27,7 +27,7 @@
             <h3><%= @outfit.bottom.join(" & ") %></h3>
           </div>
           <p class="subcaption">
-            <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %>
+            <%= link_to @bottom_suggestion.name, @bottom_suggestion.url %> - $<%= @bottom_suggestion.price %>
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@
                 <h3><%= @outfit.extras.join(" & ") %></h3>
               </div>
               <p class="subcaption">
-                <%= link_to @extras_suggestion.name, @extras_suggestion.url %>
+                <%= link_to @extras_suggestion.name, @extras_suggestion.url %> - $<%= @extras_suggestion.price %>
               </p>
             </div>
           </div>
