@@ -33,6 +33,7 @@ form {
 .subcaption {
   height: 6rem;
   overflow: hidden;
+  margin-bottom: 0rem;
 }
 
 a {
